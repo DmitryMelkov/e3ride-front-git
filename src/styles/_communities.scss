@@ -1,0 +1,240 @@
+@import "_variables";
+@import "_mixins";
+
+.communities {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  &__center {
+    width: 70%;
+  }
+  &__visited {
+    position: relative;
+  }
+  &__visited-btn {
+    position: absolute;
+    top: 16px;
+    right: 11px;
+    z-index: 1;
+    @include text(18px, 24.51px, 400, rgba($colorBlack, 0.37));
+    font-family: "OpenSans", "sans-sarif";
+    transition: color 0.3s ease-in-out;
+  }
+  &__visited,
+  &__group-communities,
+  &__subscriptions,
+  &__recommend {
+    background-color: $colorWhite;
+    border-radius: 15px;
+    box-shadow:
+      0 0 0 1px #00000009,
+      0 4px 25px #00000012;
+  }
+  &__title {
+    margin-top: 7px;
+    text-align: center;
+    @include text(28px, 41.5px, 400, rgba($black-wash, 0.75));
+    font-family: "Oswald", "sans-sarif";
+  }
+  &__visited-list {
+    padding: 19px 50px 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__visited-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    @include text(16px, 21.79px, 400, $colorBlack);
+    font-family: "OpenSans", "sans-sarif";
+  }
+  &__visited-icon {
+    width: 70px;
+    height: 70px;
+    transition: opacity 0.3s ease-in-out;
+  }
+  &__right {
+    width: 28%;
+  }
+  &__group-communities-list {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__group-communities-item:not(:last-child) {
+    margin-bottom: 22px;
+  }
+  &__group-communities-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    text-align: center;
+    @include text(15px, 18.17px, 400, $colorBlack);
+    font-family: "CormorantUpright", "sans-sarif";
+    border: 1px solid $colorGrey;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  &__subscriptions {
+    margin-top: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  &__subscriptions-list {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 41vh;
+  }
+  &__subscriptions-link {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid $black-swan;
+    transition: opacity 0.3s ease-in-out;
+  }
+  &__subscriptions-link-left {
+    margin-right: 32px;
+  }
+  &__subscriptions-link-img {
+    width: 138px;
+    height: 138px;
+  }
+  &__subscriptions-link-title {
+    margin-bottom: 9px;
+    @include text(28px, 41.5px, 400, rgba($dynamic-black, 0.75));
+    font-family: "Oswald", "sans-sarif";
+  }
+  &__subscriptions-link-subtitle {
+    display: block;
+    margin-bottom: 9px;
+    @include text(18px, 24.5px, 400, rgba($colorBlack, 0.76));
+    font-family: "OpenSans", "sans-sarif";
+  }
+  &__subscriptions-link-count,
+  &__subscriptions-link-count-text {
+    @include text(18px, 24.5px, 400, rgba($colorBlack, 0.37));
+    font-family: "OpenSans", "sans-sarif";
+  }
+  &__recommend {
+    margin-top: 25px;
+    padding: 10px;
+  }
+  &__recommend-title {
+    text-align: center;
+    @include text(16px, 24.5px, 400, $colorBlack);
+    font-family: "OpenSans", "sans-sarif";
+  }
+  &__recommend-list {
+    margin-top: 25px;
+  }
+  &__recommend-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  &__recommend-img {
+    width: 70px;
+    height: 70px;
+  }
+  &__recommend-link {
+    display: flex;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out;
+  }
+  &__recommend-left {
+    margin-right: 14px;
+  }
+  &__recommend-add {
+    margin-left: 10px;
+    transition: opacity 0.3s ease-in-out;
+  }
+  &__recommend-count-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+//hover
+@media (min-width: 1024px) {
+  .communities {
+    &__visited-link:hover &__visited-icon {
+      opacity: 0.5;
+    }
+    &__group-communities-link:hover {
+      background-color: $usc-gold;
+    }
+
+    &__subscriptions-link:hover {
+      opacity: 0.4;
+    }
+    &__recommend-link:hover {
+      opacity: 0.4;
+    }
+    &__recommend-add:hover {
+      opacity: 0.6;
+    }
+    &__visited-btn:hover {
+      color: $usc-gold;
+    }
+  }
+}
+
+//active, focus
+.communities {
+  &__visited-link:active &__visited-icon {
+    opacity: 0.5;
+  }
+  &__visited-link:focus {
+    outline: none;
+  }
+  &__visited-link:focus &__visited-icon {
+    opacity: 0.5;
+  }
+  &__group-communities-link:active {
+    background-color: $usc-gold;
+  }
+  &__group-communities-link:focus {
+    background-color: $usc-gold;
+    outline: none;
+  }
+
+  &__subscriptions-link:active {
+    opacity: 0.4;
+  }
+  &__subscriptions-link:focus {
+    opacity: 0.4;
+    outline: none;
+  }
+  &__recommend-link:active {
+    opacity: 0.4;
+  }
+  &__recommend-link:focus {
+    opacity: 0.4;
+    outline: none;
+  }
+  &__recommend-add:active {
+    opacity: 0.6;
+  }
+  &__recommend-add:focus {
+    opacity: 0.6;
+  }
+  &__visited-btn:active {
+    color: $usc-gold;
+  }
+  &__visited-btn:focus {
+    color: $usc-gold;
+    outline: none;
+  }
+}

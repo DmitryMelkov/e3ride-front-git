@@ -1,0 +1,70 @@
+@import "_variables";
+@import "_mixins";
+
+app-sidebar {
+  width: 20%;
+}
+.sidebar {
+  margin-right: 30px;
+  // width: 285px;
+  &__item {
+    padding-bottom: 39px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__item:not(:last-child) {
+    margin-bottom: 45px;
+    border-bottom: 1px solid $colorBlack;
+  }
+  &__item-svg {
+    margin-right: 28px;
+    @include svg-icon(30px, 30px, $black-swan);
+    transition: color 0.3s ease-in-out;
+  }
+  &__item-list:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  &__item-link {
+    display: flex;
+    align-items: center;
+    @include text(16px, 19.38px, 500, rgba($black-swan, 0.75));
+    font-family: "CormorantUpright", serif;
+    transition: color 0.3s ease-in-out;
+
+    &--active {
+      color: $usc-gold;
+    }
+    &--active svg {
+      color: $usc-gold;
+    }
+  }
+}
+
+//hover
+@media (min-width: 1024px) {
+  .sidebar {
+    &__item-link:hover {
+      color: $usc-gold;
+    }
+    &__item-link:hover &__item-svg {
+      @include svg-icon(30px, 30px, $usc-gold);
+    }
+  }
+}
+
+//active, focus
+.sidebar {
+  &__item-link:active {
+    color: $usc-gold;
+  }
+  &__item-link:active &__item-svg {
+    @include svg-icon(30px, 30px, $usc-gold);
+  }
+  &__item-link:focus {
+    color: $usc-gold;
+    outline: none;
+  }
+  &__item-link:focus &__item-svg {
+    @include svg-icon(30px, 30px, $usc-gold);
+  }
+}

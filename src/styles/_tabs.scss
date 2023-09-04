@@ -1,0 +1,53 @@
+@import "_variables";
+@import "_mixins";
+
+.tabs {
+  &__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__btn {
+    width: 50%;
+    height: 56px;
+    @include text(24px, 24px, 400, $colorBlack);
+    font-family: "Oswald", sans-serif;
+    background-color: $orochimaru;
+    transition: opacity 0.3s ease-in-out;
+  }
+  &__btn.active {
+    background-color: $usc-gold;
+  }
+  &__btn:first-child {
+    border-radius: 7px 0 0 7px;
+  }
+  &__btn:last-child {
+    border-radius: 0 7px 7px 0;
+  }
+  &__item {
+    display: none;
+  }
+  &__item.active {
+    display: block;
+  }
+}
+
+//hover
+@media (min-width: 1024px) {
+  .tabs {
+    &__btn:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+//active, focus
+.tabs {
+  &__btn:active {
+    opacity: 0.6;
+  }
+  &__btn:focus-visible {
+    opacity: 0.6;
+    outline: none;
+  }
+}

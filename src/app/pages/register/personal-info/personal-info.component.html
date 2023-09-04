@@ -1,0 +1,119 @@
+<div class="flex flex-col gap-5">
+  <div>
+    <h3 class="text-xl font-bold">
+      Персональная информация
+    </h3>
+    <span>
+      Эти данные видят другие пользователи
+    </span>
+  </div>
+  <form [formGroup]="form"
+        class="flex flex-col gap-2">
+    <div class="flex flex-col">
+      <label class="font-bold"
+             for="nickname">Никнейм</label>
+      <input class="h-[50px] outline-none border border-solid px-2"
+             id="nickname"
+             formControlName="nickname"
+             type="text">
+    </div>
+    <div class="flex flex-col">
+      <label class="font-bold"
+             for="name">Имя</label>
+      <input class="h-[50px] outline-none border border-solid px-2"
+             id="name"
+             formControlName="name"
+             type="text">
+    </div>
+    <div class="flex flex-col">
+      <label class="font-bold"
+             for="surname">Фамилия</label>
+      <input class="h-[50px] outline-none border border-solid px-2"
+             id="surname"
+             formControlName="surname"
+             type="text">
+    </div>
+    <div class="flex gap-2 items-center">
+      <input class="checkbox-bg"
+             id="hideName"
+             type="checkbox"
+             formControlName="hideName">
+      <label for="hideName">Скрывать Имя и Фамилию</label>
+    </div>
+    <div class="flex flex-col self-start gap-1">
+      <span class="font-bold">Пол</span>
+      <div class="gap-1">
+        <div class="flex gap-2">
+          <input id="male"
+                 type="radio"
+                 value="MALE"
+                 formControlName="gender">
+          <label for="male">Мужской</label>
+        </div>
+        <div class="flex gap-2">
+          <input id="female"
+                 type="radio"
+                 value="FEMALE"
+                 formControlName="gender">
+          <label for="female">Женский</label>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-2">
+      <span class="font-bold">День рождения</span>
+      <div class="flex gap-5">
+        <input class="h-[50px] border border-solid outline-none w-1/3 rounded px-2"
+               type="number"
+               placeholder="День"
+               formControlName="day">
+        <select class="h-[50px] border border-solid outline-none w-1/3 rounded px-2"
+                formControlName="month">
+          <option *ngFor="let month of months"
+                  [value]="month">{{month}}</option>
+        </select>
+        <input class="h-[50px] border border-solid outline-none w-1/3 rounded px-2"
+               type="number"
+               placeholder="Год">
+      </div>
+      <div class="flex gap-2 items-center">
+        <input class="checkbox-bg"
+               id="hideBirthday"
+               type="checkbox"
+               formControlName="hideBirthday">
+        <label for="hideBirthday">Скрывать дату рождения</label>
+      </div>
+    </div>
+    <div class="flex flex-col gap-2">
+      <label for="country"
+             class="font-bold">Моя страна</label>
+      <select class="h-[50px] border border-solid outline-none rounded px-2"
+              id="country"
+              formControlName="country">
+        <option></option>
+      </select>
+    </div>
+    <div class="flex flex-col gap-2">
+      <label for="city"
+             class="font-bold">Мой город</label>
+      <select class="h-[50px] border border-solid outline-none rounded px-2"
+              id="city"
+              formControlName="city">
+        <option></option>
+      </select>
+    </div>
+    <div class="flex flex-col gap-2">
+      <label for="aboutMe"
+             class="font-bold">Обо мне</label>
+      <textarea id="aboutMe"
+                formControlName="aboutMe"
+                class="border border-solid outline-none rounded p-2 resize-none"
+                rows="3"></textarea>
+    </div>
+  </form>
+  <div class="self-end w-[200px]">
+    <button class="h-[50px] bg-[#cc4444] w-full rounded-full font-bold text-white"
+            (click)="submit()">
+      Далее
+    </button>
+  </div>
+</div>

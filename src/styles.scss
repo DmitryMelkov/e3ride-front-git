@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "styles/style";
+
+@import 'quill/dist/quill.snow.css';
+
+
+.main-page-bg {
+  background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3) 180px, #111 360px), url('./assets/backgrounds/img.png'), #393a3e;
+}
+
+.box-shadow {
+  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, .035), 0 4px 25px rgba(0, 0, 0, .07);;
+  -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, .035), 0 4px 25px rgba(0, 0, 0, .07);;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .035), 0 4px 25px rgba(0, 0, 0, .07);;
+}
+
+//.checkbox-bg:checked {
+//  background-image: url("./assets/icons/checkbox.svg");
+//  border: none;
+//}

@@ -48,7 +48,6 @@ app-create-community {
   &__item-content {
     display: flex;
     align-items: center;
-    justify-content: center;
   }
   &__label {
     max-width: 228px;
@@ -93,6 +92,20 @@ app-create-community {
     padding-bottom: 21px;
     height: 200px;
     resize: none;
+  }
+  &__site {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  &__site-icon {
+    width: 48px;
+    height: 48px;
+    margin-right: 50px;
+  }
+  &__site-check {
+    margin-left: 27px;
   }
 }
 

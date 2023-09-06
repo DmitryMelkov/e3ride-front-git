@@ -48,23 +48,37 @@ app-create-community {
   &__item-content {
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
+  &__item-content-check {
+    justify-content: flex-start;
+  }
+
   &__label {
+    width: 30%;
     max-width: 228px;
     margin-right: 39px;
     @include text(22px, 29px, 400, $colorBlack);
     font-family: "OpenSans", "sans-sarif";
   }
   &__input {
+    margin-right: 47px;
     padding-left: 21px;
     padding-right: 21px;
-    width: 100%;
+    width: 70%;
     height: 52px;
     border: 1px solid rgba($colorBlack, 0.3);
     border-radius: 7px;
-    @include text(22px, 29px, 400, $colorBlack);
+    @include text(16px, 16px, 400, $colorBlack);
     font-family: "OpenSans", "sans-sarif";
     transition: border 0.3s ease-in-out;
+  }
+  &__input-tethered-electric-vehicle {
+    width: 40%;
+  }
+  &__input-check {
+    width: 60%;
+    margin-right: 17px;
   }
   &__input::placeholder {
     @include text(22px, 29px, 400, $colorBlack);
@@ -118,6 +132,9 @@ app-create-community {
     &__input:hover {
       border: 1px solid $usc-gold;
     }
+    &__btn:hover {
+      opacity: 0.4;
+    }
   }
 }
 
@@ -135,6 +152,13 @@ app-create-community {
   }
   &__input:focus {
     border: 1px solid $usc-gold;
+    outline: none;
+  }
+  &__btn:active {
+    opacity: 0.4;
+  }
+  &__btn:focus {
+    opacity: 0.4;
     outline: none;
   }
 }

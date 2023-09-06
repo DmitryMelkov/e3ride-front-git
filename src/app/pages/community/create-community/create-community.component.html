@@ -27,7 +27,8 @@
         <li class="create-community__item">
           <div class="create-community__item-content">
             <label class="create-community__label" for="tethered-electric-vehicle">Привязанный электротранспорт</label>
-            <input class="create-community__input" id="tethered-electric-vehicle" type="text">
+            <input class="create-community__input create-community__input-tethered-electric-vehicle"
+              id="tethered-electric-vehicle" type="text">
           </div>
           <ul class="create-community__item-list">
             <li class="create-community__model">
@@ -72,16 +73,85 @@
             <label class="create-community__label" for="create-community-site">Сайт</label>
             <div class="create-community__site">
               <img class="create-community__site-icon" src="../../../../assets/img/site-icon.svg" alt="site-icon">
-              <input class="create-community__input" id="create-community-site" type="url">
-              <div>
-                <input class="create-community__site-check" type="checkbox">
+              <input class="create-community__input create-community__input-check" id="create-community-site"
+                type="url">
+              <div class="checkbox">
+                <input class="checkbox__input req" type="checkbox" id="checkboxSite" name="check" />
+                <label class="checkbox__label" for="checkboxSite"></label>
               </div>
             </div>
+          </div>
+          <span class="create-community__error error">invalid error</span>
+        </li>
+        <li class="create-community__item">
+          <div class="create-community__item-content">
+            <label class="create-community__label" for="create-community-tg">TG</label>
+            <div class="create-community__site">
+              <img class="create-community__site-icon" src="../../../../assets/img/telegram.svg" alt="site-icon">
+              <input class="create-community__input create-community__input-check" id="create-community-tg" type="url">
+              <div class="checkbox">
+                <input class="checkbox__input req" type="checkbox" id="checkboxtg" />
+                <label class="checkbox__label" for="checkboxtg"></label>
+              </div>
+            </div>
+          </div>
+          <span class="create-community__error error">invalid error</span>
+        </li>
+        <li class="create-community__item">
+          <div class="create-community__item-content">
+            <label class="create-community__label" for="create-community-vk">VK</label>
+            <div class="create-community__site">
+              <img class="create-community__site-icon" src="../../../../assets/img/vk.svg" alt="site-icon">
+              <input class="create-community__input create-community__input-check" id="create-community-vk" type="text">
+              <div class="checkbox">
+                <input class="checkbox__input req" type="checkbox" id="checkboxvk" />
+                <label class="checkbox__label" for="checkboxvk"></label>
+              </div>
+            </div>
+          </div>
+          <span class="create-community__error error">invalid error</span>
+        </li>
+        <li class="create-community__item">
+          <div class="create-community__item-content">
+            <label class="create-community__label" for="create-community-whatsapp">WhatsApp</label>
+            <div class="create-community__site">
+              <img class="create-community__site-icon" src="../../../../assets/img/whatsapp.svg" alt="site-icon">
+              <input class="create-community__input create-community__input-check" id="create-community-whatsapp"
+                type="text">
+              <div class="checkbox">
+                <input class="checkbox__input req" type="checkbox" id="checkboxwhatsapp" />
+                <label class="checkbox__label" for="checkboxwhatsapp"></label>
+              </div>
+            </div>
+          </div>
+          <span class="create-community__error error">invalid error</span>
+        </li>
+        <li class="create-community__item">
+          <div class="create-community__item-content create-community__item-content-check">
+            <span class="create-community__label">Полезные разделы</span>
 
+            <div class="checkbox">
+              <input class="checkbox__input req" type="checkbox" id="checkbox-useful-section" />
+              <label class="checkbox__label" for="checkbox-useful-section"></label>
+            </div>
+          </div>
+          <span class="create-community__error error">invalid error</span>
+        </li>
+        <li class="create-community__item">
+          <div class="create-community__item-content create-community__item-content-check">
+            <span class="create-community__label">Медиажурнал</span>
+            <div class="checkbox">
+              <input class="checkbox__input req" type="checkbox" id="checkbox-media-magazine" />
+              <label class="checkbox__label" for="checkbox-media-magazine"></label>
+            </div>
           </div>
           <span class="create-community__error error">invalid error</span>
         </li>
       </ul>
     </form>
+  </div>
+  <div class="create-community__btns">
+    <button class="create-community__btn create-community__btn-cancel btn-reset">Отмена</button>
+    <button class="create-community__btn create-community__btn-create btn-reset">Создать сообщество</button>
   </div>
 </div>

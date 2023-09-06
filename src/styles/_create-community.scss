@@ -121,6 +121,70 @@ app-create-community {
   &__site-check {
     margin-left: 27px;
   }
+  &__btns {
+    width: 100%;
+  }
+  &__btn {
+    width: 50%;
+    height: 56px;
+    @include text(24px, 36px, 400, $colorBlack);
+    font-family: "Oswald", "sans-sarif";
+    transition: opacity 0.3s ease-in-out;
+  }
+  &__btn-cancel {
+    border-radius: 15px 0 0 15px;
+    background-color: $orochimaru;
+  }
+  &__btn-create {
+    border-radius: 0 15px 15px 0;
+    background-color: $usc-gold;
+  }
+}
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__input {
+    display: none;
+  }
+  &__label {
+    width: 100%;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    color: $colorBlack;
+    display: inline-flex;
+    position: relative;
+    cursor: pointer;
+  }
+  &__label::before {
+    content: "";
+    align-self: flex-start;
+    flex: 0 0 30px;
+    height: 30px;
+    background-color: $colorWhite;
+    border: 1px solid rgba($colorBlack, 0.3);
+    border-radius: 4px;
+    margin: 0 30px 0 0;
+  }
+  &__label::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 7px;
+    width: 30px;
+    height: 30px;
+    background-image: url("../assets/img/checkbox-icon.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transform: scale(0);
+  }
+  &__input:checked + &__label::after {
+    transform: scale(1);
+  }
 }
 
 //hover

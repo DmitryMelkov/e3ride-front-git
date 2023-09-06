@@ -1,0 +1,195 @@
+@import "_variables";
+@import "_mixins";
+
+.modal-subscribers {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  &__dialog {
+    position: relative;
+    width: 80%;
+    margin: 5% auto;
+    pointer-events: none;
+
+    box-shadow:
+      0 0 0 1px rgba(0, 0, 0, 0.0352941176),
+      0 4px 25px rgba(0, 0, 0, 0.0705882353);
+  }
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: $colorWhite;
+    background-clip: padding-box;
+    border: 1px solid $colorBlack;
+    border-radius: 15px;
+    outline: 0;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba($colorGrey, 0.5);
+  }
+  &__title {
+    @include text(28px, 41.5px, 400, rgba($black-wash, 0.75));
+    font-family: "Oswald", "sans-sarif";
+  }
+  &__search {
+    position: relative;
+    width: 50%;
+  }
+  &__input {
+    padding-left: 21px;
+    padding-right: 50px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid $colorWhite;
+    box-shadow:
+      0 0 0 1px #00000009,
+      0 4px 25px #00000012;
+
+    border-radius: 7px;
+    @include text(18px, 18px, 400, rgba($dynamic-black, 0.58));
+    font-family: "Oswald", "sans-sarif";
+    transition: border 0.3s ease-in-out;
+  }
+  &__input::placeholder {
+    // padding-left: 21px;
+    @include text(18px, 18px, 400, rgba($dynamic-black, 0.58));
+    font-family: "Oswald", "sans-sarif";
+  }
+  &__search-btn {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    transform: translateY(-50%);
+  }
+  &__search-btn {
+    right: 15px;
+  }
+  &__search-svg {
+    width: 22px;
+    height: 22px;
+    color: $colorGrey;
+    transition: color 0.3s ease-in-out;
+  }
+  &__close-svg {
+    width: 33px;
+    height: 33px;
+    color: $colorGrey;
+    transition: color 0.3s ease-in-out;
+  }
+  &__body {
+    padding: 15px 20px;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+    overflow-y: scroll;
+    max-height: 700px;
+  }
+  &__item {
+    grid-column: span 2;
+  }
+  &__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out;
+  }
+  &__avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    border: 1px solid $detective-coat;
+  }
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__name {
+    margin-bottom: 10px;
+    text-align: center;
+    @include text(16px, 16px, 700, $colorBlack);
+    font-family: "OpenSans", "sans-sarif";
+  }
+  &__rang {
+    margin-bottom: 10px;
+    text-align: center;
+
+    @include text(14px, 14px, 400, $colorBlack);
+    font-family: "OpenSans", "sans-sarif";
+  }
+  &__status {
+    text-align: center;
+    @include text(14px, 14px, 400, rgba($colorBlack, 0.3));
+    font-family: "OpenSans", "sans-sarif";
+  }
+}
+
+.admin-color {
+  color: red;
+}
+
+//hover
+@media (min-width: 1024px) {
+  .modal-subscribers {
+    &__input:hover {
+      border: 1px solid $usc-gold;
+    }
+    &__search-btn:hover &__search-svg,
+    &__close-modal:hover &__close-svg {
+      color: $usc-gold;
+    }
+    &__link:hover {
+      opacity: 0.4;
+    }
+  }
+}
+
+//active, focus
+.modal-subscribers {
+  &__input:active {
+    border: 1px solid $usc-gold;
+  }
+  &__input:focus {
+    border: 1px solid $usc-gold;
+    outline: none;
+  }
+  &__search-btn:active &__search-svg,
+  &__close-modal:active &__close-svg {
+    color: $usc-gold;
+  }
+  &__search-btn:focus &__search-svg,
+  &__close-modal:focus &__close-svg {
+    color: $usc-gold;
+  }
+  &__search-btn:focus,
+  &__close-modal:focus {
+    outline: none;
+  }
+  &__link:active {
+    opacity: 0.4;
+  }
+  &__link:focus {
+    opacity: 0.4;
+    outline: none;
+  }
+}

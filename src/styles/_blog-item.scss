@@ -1,0 +1,160 @@
+@import "_variables";
+@import "_mixins";
+
+.blog-item {
+  padding: 20px 30px;
+  margin-top: 14px;
+  background-color: $colorWhite;
+  border-radius: 15px;
+  box-shadow:
+    0 0 0 1px #00000009,
+    0 4px 25px #00000012;
+  &__header {
+    margin-bottom: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__header-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__header-icon {
+    margin-right: 17px;
+  }
+  &__header-icon-img {
+    width: 70px;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid $detective-coat;
+  }
+  &__nickname {
+    margin-bottom: 5px;
+  }
+  &__name {
+    margin-right: 5px;
+    @include text(24px, 24px, 400, $colorBlack);
+    font-family: "Oswald", sans-serif;
+  }
+  &__rang {
+    @include text(18px, 18px, 400, rgba($colorBlack, 0.6));
+    font-family: "Oswald", sans-serif;
+  }
+  &__elscooter-record {
+    max-width: 400px;
+    margin-bottom: 5px;
+    @include text(18px, 18px, 400, rgba($colorBlack, 0.8));
+    font-family: "OpenSans", sans-serif;
+  }
+  &__min-ago {
+    @include text(18px, 18px, 400, rgba($colorBlack, 0.5));
+    font-family: "OpenSans", sans-serif;
+  }
+  &__header-subscribe {
+    width: 151px;
+    height: 29px;
+    @include text(18px, 18px, 400, $colorBlack);
+    font-family: "Oswald", sans-serif;
+    background-color: $usc-gold;
+    border-radius: 7px;
+    transition:
+      background-color 0.3s ease-in-out,
+      color 0.3s ease-in-out;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    text-align: center;
+    @include text(24px, 24px, 400, rgba($black-wash, 0.7));
+    font-family: "Oswald", sans-serif;
+  }
+  &__slider {
+    padding-bottom: 40px;
+  }
+  &__swiper-slide {
+    cursor: pointer;
+  }
+  &__descr {
+    margin-bottom: 20px;
+    @include text(18px, 28px, 400, rgba($colorBlack, 0.7));
+    font-family: "OpenSans", sans-serif;
+  }
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__social-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__social-item {
+    margin-right: 20px;
+  }
+  &__social-item-btn {
+    display: flex;
+    align-items: flex-end;
+    transition: opacity 0.3s ease-in-out;
+  }
+  &__item-img,
+  &__eye-img {
+    margin-right: 5px;
+    width: 31px;
+    height: 31px;
+  }
+  &__social-item-number {
+    @include text(18px, 18px, 400, $colorBlack);
+    font-family: "OpenSans", sans-serif;
+  }
+  &__social-right {
+    display: flex;
+    align-items: center;
+  }
+  &__social-eye-number {
+    @include text(18px, 18px, 400, $colorGrey);
+    font-family: "OpenSans", sans-serif;
+  }
+}
+
+.blog-item__slider .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: $usc-gold;
+}
+
+@media (min-width: 1024px) {
+  .blog-item {
+    &__header-subscribe:hover {
+      background-color: $colorBlack;
+      color: $colorWhite;
+    }
+    &__social-item-btn:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+//focus, active
+.blog-item {
+  &__header-subscribe:active {
+    background-color: $colorBlack;
+    color: $colorWhite;
+  }
+  &__header-subscribe:focus-visible {
+    background-color: $colorBlack;
+    color: $colorWhite;
+    outline: none;
+  }
+  &__social-item-btn:active {
+    opacity: 0.5;
+  }
+  &__social-item-btn:focus-visible {
+    opacity: 0.5;
+  }
+}
+
+.admin-color {
+  color: red;
+}
